@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0e4a5a" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <title>Spark Works</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #0e4a5a;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+        font-family: Andika, Verdana, sans-serif;
+        /* A game, not a page: no pull-to-refresh, no text selection, no long-press menu. */
+        overscroll-behavior: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+      }
+      #game {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        /* No pinch-zoom, double-tap zoom or panning: every touch belongs to the game. */
+        touch-action: none;
+      }
+      /* A tablet held upright gets a friendly card, not a tiny game. */
+      #turn {
+        display: none;
+      }
+      @media (orientation: portrait) and (pointer: coarse) {
+        #turn {
+          position: fixed;
+          inset: 0;
+          z-index: 10;
+          display: grid;
+          place-items: center;
+          align-content: center;
+          gap: 20px;
+          background: #0e4a5a;
+          color: #fff8ea;
+          text-align: center;
+          font-size: 24px;
+          line-height: 1.4;
+          padding: 24px;
+        }
+        #turn svg {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-BYAZnytD.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-3vgJEDxC.css">
+  </head>
+  <body>
+    <div id="game"></div>
+    <div id="turn" role="alert">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <g stroke="#3a2617" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+          <rect x="38" y="14" width="44" height="72" rx="8" fill="#f3dfb6" />
+          <rect x="44" y="22" width="32" height="54" rx="4" fill="#58a3e6" />
+          <path d="M22 92 Q40 112 72 106" fill="none" stroke="#f8c03a" stroke-width="6" />
+          <path d="M64 98 L74 106 L64 114" fill="none" stroke="#f8c03a" stroke-width="6" />
+        </g>
+      </svg>
+      <p style="margin: 0">Turn the tablet on its side to play.</p>
+    </div>
+  </body>
+</html>
